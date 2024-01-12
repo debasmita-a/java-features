@@ -2,7 +2,7 @@ package programs;
 
 import java.util.Scanner;
 
-public class FindMaxElement {
+public class SumOfMaxMin {
 
 	public static void main(String[] args) {
 		int array[];
@@ -16,20 +16,26 @@ public class FindMaxElement {
 			array[i] = scan.nextInt();
 		}
 		
-		System.out.println(findMax(array));
+		System.out.println(sumMaxMin(array));
 
 	}
 	
-	public static int findMax(int a[]) {
+	public static int sumMaxMin(int a[]) {
+		int sum = 0;
 		int max = a[0];
-		
-		for(int i =1; i<a.length; i++) {
-			if(a[i]>max) {
+		int min = a[0];
+		for(int i=1; i<a.length; i++){
+			if(max<a[i]) {
 				max = a[i];
 			}
+			
+			if(min>a[i]) {
+				min = a[i];
+			}
 		}
+		sum = max + min;
 		
-		return max;
+		return sum;
 	}
 
 }
